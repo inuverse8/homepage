@@ -1,14 +1,14 @@
 import React from "react";
 import MainLayout from "../templates/MainLayout";
-import { PRIMARY_TEXT_COLOR } from "../index";
+import { PRIMARY_TEXT_COLOR, TEXT_SIZE_XXLARGE, FONT_STYLE_BOLD, TEXT_SIZE_LARGE } from "../index";
 
 const About: React.FC = () => {
   return (
     <MainLayout>
       <div className="container mx-auto px-6 max-w-screen-md">
         {/* 管理人の経歴 */}
-        <h2 className={`text-3xl font-bold mb-4 ${PRIMARY_TEXT_COLOR}`}>経歴</h2>
-        <ul className="list-disc pl-5 text-gray-700">
+        <h2 className={`${TEXT_SIZE_XXLARGE} ${FONT_STYLE_BOLD} mb-4 ${PRIMARY_TEXT_COLOR}`}>経歴</h2>
+        <ul className={`list-disc pl-5 ${PRIMARY_TEXT_COLOR}`}>
           <li>2015年3月 佐賀大学理工学部物理科学科 入学</li>
           <li>2019年3月 佐賀大学理工学部物理科学科 卒業</li>
           <li>2019年4月 佐賀大学大学院修士課程 入学</li>
@@ -23,8 +23,8 @@ const About: React.FC = () => {
         <div className="mt-10"></div> 
 
         {/* 管理人が携わった論文 */}
-        <h2 className={`text-3xl font-bold mb-4 ${PRIMARY_TEXT_COLOR}`}>携わった論文</h2>
-        <ul className="list-disc pl-5 text-gray-700">
+        <h2 className={`${TEXT_SIZE_XXLARGE} ${FONT_STYLE_BOLD} mb-4 ${PRIMARY_TEXT_COLOR}`}>携わった論文</h2>
+        <ul className={`list-disc pl-5 ${PRIMARY_TEXT_COLOR}`}>
           <li>
             <a 
             href="https://arxiv.org/abs/2112.05283" 
@@ -56,10 +56,10 @@ const About: React.FC = () => {
         <div className="mt-10"></div> 
 
         {/* 管理人のスキル */}
-        <h2 className={`text-3xl font-bold mb-4 ${PRIMARY_TEXT_COLOR}`}>スキル</h2>
+        <h2 className={`${TEXT_SIZE_XXLARGE} ${FONT_STYLE_BOLD} mb-4 ${PRIMARY_TEXT_COLOR}`}>スキル</h2>
         <div className="space-y-4">
           <div>
-            <h3 className="font-semibold mb-2">プログラミング言語</h3>
+            <h3 className={`${TEXT_SIZE_LARGE} ${FONT_STYLE_BOLD} mb-2`}>プログラミング言語</h3>
             <table className="w-full">
               <tbody>
                 <tr className="border-b">
@@ -93,7 +93,7 @@ const About: React.FC = () => {
           <div className="mt-5"></div>  
 
           <div>
-            <h3 className="font-semibold mb-2">フレームワーク・ライブラリ</h3>
+            <h3 className={`${TEXT_SIZE_LARGE} ${FONT_STYLE_BOLD} mb-2`}>フレームワーク・ライブラリ</h3>
             <table className="w-full">
               <tbody>
                 <tr className="border-b">
@@ -116,7 +116,7 @@ const About: React.FC = () => {
           <div className="mt-5"></div> 
 
           <div>
-            <h3 className="font-semibold mb-2">語学</h3>
+            <h3 className={`${TEXT_SIZE_LARGE} ${FONT_STYLE_BOLD} mb-2`}>語学</h3>
             <table className="w-full">
               <tbody>
                 <tr className="border-b">
@@ -132,7 +132,7 @@ const About: React.FC = () => {
           <div className="mt-5"></div> 
 
           <div>
-            <h3 className="font-semibold mb-2">その他スキル</h3>
+            <h3 className={`${TEXT_SIZE_LARGE} ${FONT_STYLE_BOLD} mb-2`}>その他スキル</h3>
             <table className="w-full">
               <tbody>
                 <tr className="border-b">

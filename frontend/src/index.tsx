@@ -4,6 +4,22 @@
 export const HOME_PAGE_TITLE = "宇宙と機械学習と日常と";
 
 /**
+ * テキストサイズ
+ */
+export const TEXT_SIZE_XXLARGE = "text-4xl";
+export const TEXT_SIZE_XLARGE = "text-2xl";
+export const TEXT_SIZE_LARGE = "text-lg";
+export const TEXT_SIZE_BASE = "text-base";
+
+/**
+ * フォントスタイル
+ */
+export const FONT_STYLE_BOLD = "font-bold";
+export const FONT_STYLE_ITALIC = "font-italic";
+export const FONT_STYLE_UNDERLINE = "underline";
+export const FONT_STYLE_CANCEL = "line-through";
+
+/**
  * カラー
  */
 // メインカラー
