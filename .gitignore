@@ -3,3 +3,12 @@
 
 # package-lock.json
 **/package-lock.json
+
+# mac
+.DS_Store
+
+# environment variables
+.env
+
+# logs
+**/logs
