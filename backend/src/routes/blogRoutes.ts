@@ -9,6 +9,12 @@ import {
 
 const router = Router();
 
+
+/**
+ * REST API ルール
+ * Expressのルートは上から順に評価されるため、
+ * より具体的なルートを先に書き、動的ルート (/:id など) を後に書く
+ */
 // 1. 固定パスを先に定義
 router.get("/cards", getBlogCards); // ブログカード一覧
 
