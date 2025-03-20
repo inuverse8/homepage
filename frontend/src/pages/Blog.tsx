@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import MainLayout from "../templates/MainLayout";
 import BlogCard from "../organisms/BlogCard";
 import { FONT_STYLE_BOLD, TEXT_SIZE_XXLARGE, PRIMARY_TEXT_COLOR, TEXT_SIZE_BASE } from "..";
@@ -25,23 +26,23 @@ const Blog: React.FC = () => {
         return response.json();
       })
       .then((data) => {
-        console.log("📌 API レスポンス:", data); // ここでログを確認
+        console.log("📌 API レスポンス:", data);
 
         const formattedData = data.map((post: any) => {
-          console.log("📌 post.date の値:", post.date); // ここで `date` の値をチェック
+          console.log("📌 post.date の値:", post.date);
 
-          let formattedDate = "日付なし"; // デフォルト値を設定
-
+          let formattedDate = "日付なし";
           if (post.date) {
             const date = new Date(post.date);
-            formattedDate = date.toISOString().split("T")[0]; // YYYY-MM-DD に変換
+            formattedDate = date.toISOString().split("T")[0];
           }
 
-          let imageUrl = "https://picsum.photos/200/300"; // デフォルト値を設定
+          let imageUrl = "https://picsum.photos/200/300";
           if (post.thumbnail_url) {
-            imageUrl = post.thumbnail_url
+            imageUrl = post.thumbnail_url;
           }
           console.log("📌 imageUrl の値:", imageUrl);
+
           return {
             id: post.blog_id,
             title: post.title,
@@ -71,14 +72,15 @@ const Blog: React.FC = () => {
         <div className="grid grid-cols-1 gap-6">
           {!loading && !error &&
             blogPosts.map((post) => (
-              <BlogCard
-                key={post.id}
-                title={post.title}
-                description={post.description}
-                date={post.date}
-                id={post.id}
-                imageUrl={post.imageUrl}
-              />
+              <Link to={`/blogs/${post.id}`} key={post.id} className="block hover:opacity-80 transition">
+                <BlogCard
+                  title={post.title}
+                  description={post.description}
+                  date={post.date}
+                  id={post.id}
+                  imageUrl={post.imageUrl}
+                />
+              </Link>
             ))}
         </div>
       </div>

@@ -74,7 +74,7 @@ export async function getAllBlogCards(): Promise<BlogCard[]> {
                 bi.title, 
                 bi.description, 
                 DATE_FORMAT(bi.date, '%Y-%m-%d') AS date, 
-                COALESCE(bi.thumbnail_url, 'https://picsum.photos/200/300') AS imageUrl
+                COALESCE(bi.thumbnail_url) AS imageUrl
             FROM Blog b
             JOIN BlogBasicInfo bi ON b.blog_id = bi.blog_id
             ORDER BY bi.date DESC`
