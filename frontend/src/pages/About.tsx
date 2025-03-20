@@ -121,7 +121,7 @@ const About: React.FC = () => {
               <tbody>
                 <tr className="border-b">
                   <td className="py-2 pr-4 w-32">英語</td>
-                  <td className="py-2">義務教育からなので、ざっと15年ほど。TOEIC615。
+                  <td className="py-2">義務教育からなので、ざっと15年ほど。TOEIC625。
                     初めて受けたTOEICは195点だったから、多分まだまだ伸びるよ（という気持ち）。</td>
                 </tr>
               </tbody>
