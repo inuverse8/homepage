@@ -1,1 +1,79 @@
 @import "tailwindcss";
+
+/* Markdown 用のカスタム Tailwind スタイル */
+.prose {
+  max-width: 100%;
+  font-size: 1rem;
+  color: #333333; /* テキストの色 */
+}
+
+/* 見出し */
+.prose h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333333;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333333;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+}
+
+/* リスト */
+.prose ul, .prose ol {
+  padding-left: 1.5rem;
+}
+
+.prose ul {
+  list-style-type: disc;
+}
+
+.prose ol {
+  list-style-type: decimal;
+}
+
+/* コードブロック */
+.prose pre {
+  background-color: #1e293b; /* ダークモード */
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  color: #f8fafc;
+}
+
+/* インラインコード */
+.prose code {
+  background-color: #334155;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: #facc15;
+  font-family: 'Fira Code', monospace;
+}
+
+/* コードブロックの中のコード */
+.prose pre code {
+  font-size: 0.95em;
+  color: #f8f8f2;
+}
+
+/* KaTeX 数式のフォント */
+.prose .katex {
+  font-size: 1em;
+  font-family: KaTeX_Main, serif;
+}
+
+/* blockquote (引用) */
+.prose blockquote {
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+  color: #555;
+  font-style: italic;
+}

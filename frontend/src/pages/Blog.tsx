@@ -5,11 +5,11 @@ import BlogCard from "../organisms/BlogCard";
 import { FONT_STYLE_BOLD, TEXT_SIZE_XXLARGE, PRIMARY_TEXT_COLOR, TEXT_SIZE_BASE } from "..";
 
 interface BlogPost {
-  id: number;
-  title: string;
-  description: string;
-  date: string;
-  imageUrl: string;
+    id: number;
+    title: string;
+    description: string;
+    date: string;
+    imageUrl: string;
 }
 
 const Blog: React.FC = () => {

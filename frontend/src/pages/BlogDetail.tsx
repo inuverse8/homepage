@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import remarkGfm from "remark-gfm"; 
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import rehypeHighlight from "rehype-highlight";
+import rehypeRaw from "rehype-raw"; // ✅ 追加
+import "highlight.js/styles/github-dark.css";
 import MainLayout from "../templates/MainLayout";
-import { FONT_STYLE_BOLD, TEXT_SIZE_XXLARGE, PRIMARY_TEXT_COLOR, TEXT_SIZE_BASE } from "..";
+import { FONT_STYLE_BOLD, TEXT_SIZE_XXLARGE, PRIMARY_TEXT_COLOR } from "..";
 
 interface BlogPost {
   blog_id: number;
@@ -47,8 +52,13 @@ const BlogDetail: React.FC = () => {
           {blog.title}
         </h1>
         <p className="text-gray-600 text-sm mb-4">{blog.date}</p>
-        <div className="prose max-w-none dark:prose-invert">
-          <ReactMarkdown remarkPlugins={[remarkGfm]}>{blog.blog_body}</ReactMarkdown>
+        <div className="prose-lg max-w-none dark:prose-invert">
+          <ReactMarkdown 
+            remarkPlugins={[remarkGfm, remarkMath]} 
+            rehypePlugins={[rehypeRaw, rehypeKatex, rehypeHighlight]} // ✅ rehypeRaw を追加
+          >
+            {blog.blog_body}
+          </ReactMarkdown>
         </div>
       </div>
     </MainLayout>
