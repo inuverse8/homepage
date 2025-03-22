@@ -45,6 +45,8 @@ const BlogDetail: React.FC = () => {
   if (error) return <p className="text-red-500">{error}</p>;
   if (!blog) return <p className="text-gray-500">ブログが見つかりません</p>;
 
+  console.log(blog);
+
   return (
     <MainLayout>
       <div className="container mx-auto px-6 max-w-screen-md">
@@ -55,7 +57,7 @@ const BlogDetail: React.FC = () => {
         <div className="prose-lg max-w-none dark:prose-invert">
           <ReactMarkdown 
             remarkPlugins={[remarkGfm, remarkMath]} 
-            rehypePlugins={[rehypeRaw, rehypeKatex, rehypeHighlight]} // ✅ rehypeRaw を追加
+            rehypePlugins={[rehypeRaw, rehypeKatex, rehypeHighlight]} 
           >
             {blog.blog_body}
           </ReactMarkdown>

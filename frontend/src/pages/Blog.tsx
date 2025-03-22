@@ -72,7 +72,8 @@ const Blog: React.FC = () => {
         <div className="grid grid-cols-1 gap-6">
           {!loading && !error &&
             blogPosts.map((post) => (
-              <Link to={`/blogs/${post.id}`} key={post.id} className="block hover:opacity-80 transition">
+              // ブログ記事の詳細ページへのリンク
+              <Link to={`/blogs/${post.id}`} key={post.id} className="block hover:opacity-80 transition"> 
                 <BlogCard
                   title={post.title}
                   description={post.description}
