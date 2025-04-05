@@ -3,7 +3,7 @@ import {
   getBlogs, 
   getBlog, 
   createNewBlog, 
-  deleteBlogById, 
+  deleteBlog, 
   getBlogCards 
 } from "../controllers/blogController";
 
@@ -26,6 +26,6 @@ router.get("/:id", getBlog); // ID指定でブログ記事取得
 
 // 4. データを作成・更新・削除する API
 router.post("/", createNewBlog); // 新しいブログ記事作成
-router.delete("/:id", deleteBlogById); // ID指定でブログ記事削除
+router.delete("/:id", deleteBlog); // ID指定でブログ記事削除
 
 export default router;
