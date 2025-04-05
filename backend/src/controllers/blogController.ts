@@ -3,7 +3,7 @@ import {
     getAllBlogs,
     getBlogById,
     createBlog,
-    deleteBlog,
+    deleteBlogById,
     getAllBlogCards,
 } from "../models/blogModel";
 
@@ -44,10 +44,10 @@ export async function createNewBlog(req: Request, res: Response) {
 }
 
 // ブログを削除
-export async function deleteBlogById(req: Request, res: Response) {
+export async function deleteBlog(req: Request, res: Response) {
     console.info("🔍 Deleting blog by ID...");
     try {
-        const success = await deleteBlog(Number(req.params.id));
+        const success = await deleteBlogById(Number(req.params.id));
     success
       ? res.status(204).send()
       : res.status(404).json({ error: "Blog not found" });
